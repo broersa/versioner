@@ -16,6 +16,7 @@ namespace com.bekijkhet.Versioner
             string minor = null;
             string build = null;
             string revision = null;
+            string trademark = null;
             bool help = false;
             bool verbose = false;
             var p = new OptionSet() {
@@ -24,13 +25,14 @@ namespace com.bekijkhet.Versioner
    	            { "minor=",    v => minor = v },
    	            { "build=",    v => build = v },
    	            { "revision=",    v => revision = v },
+   	            { "trademark=",    v => trademark = v },
    	            { "v|verbose",  v => verbose = v != null },
    	            { "h|?|help",   v => help = v != null },
             };
             List<string> extra = p.Parse(args);
-            if (inpath == null || major == null || minor == null || build == null || revision == null || help)
+            if (inpath == null || major == null || minor == null || build == null || revision == null || trademark == null || help)
             {
-                Console.WriteLine("Versioner.exe --inpath <path> --major <version> --minor <version> --build <version> --revision <version>");
+                Console.WriteLine("Versioner.exe --inpath <path> --major <version> --minor <version> --build <version> --revision <version> --trademark <svn/git revision>");
             }
             else
             {
@@ -51,6 +53,7 @@ namespace com.bekijkhet.Versioner
                                     {
                                         if (line.StartsWith("[assembly: AssemblyVersion(")) line = "[assembly: AssemblyVersion(\""+major+"."+minor+"."+build+"."+revision+"\")]";
                                         if (line.StartsWith("[assembly: AssemblyFileVersion(")) line = "[assembly: AssemblyFileVersion(\""+major+"."+minor+"."+build+"."+revision+"\")]";
+                                        if (line.StartsWith("[assembly: AssemblyTrademark(")) line = "[assembly: AssemblyTrademark(\"VCS: " + trademark + "\")]";
                                         w.WriteLine(line);
                                     }
                                 }
