@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <BUILD_NUMBER Condition=" '$(BUILD_NUMBER)' == '' ">5</BUILD_NUMBER>
+    <SVN_REVISION Condition=" '$(SVN_REVISION)' == '' ">6</SVN_REVISION>
+    <Major>1</Major>
+    <Minor>0</Minor>
+    <Build>$(BUILD_NUMBER)</Build>
+    <Revision>$(SVN_REVISION)</Revision>
+  </PropertyGroup>  
+  <ItemGroup>
+    <Binaries Include=".\"/>
+  </ItemGroup>
+  <Target Name="Build">
+    <Exec IgnoreExitCode="true" Command="Versioner.exe --inpath %(Binaries.RelativeDir) --major $(Major) --minor $(Minor) --build $(Build) --revision $(Revision)" />
+  </Target>
+</Project>
