@@ -5,6 +5,6 @@
     <Binaries Include="Versioner\"/>
   </ItemGroup>
   <Target Name="Build">
-    <Exec IgnoreExitCode="true" Command="Versioner.exe --inpath %(Binaries.RelativeDir) --major $(Major) --minor $(Minor) --build $(Build) --revision 0 --trademark $(Revision)"  />
+    <Exec IgnoreExitCode="true" Command="Versioner --inpath %(Binaries.RelativeDir) --major $(Major) --minor $(Minor) --build $(Build) --revision 0 --trademark $(Revision)"  />
   </Target>
 </Project>
