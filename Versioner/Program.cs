@@ -29,7 +29,7 @@ namespace com.bekijkhet.Versioner
    	            { "v|verbose",  v => verbose = v != null },
    	            { "h|?|help",   v => help = v != null },
             };
-            List<string> extra = p.Parse(args);
+            p.Parse(args);
             if (inpath == null || major == null || minor == null || build == null || revision == null || trademark == null || help)
             {
                 Console.WriteLine("Versioner.exe --inpath <path> --major <version> --minor <version> --build <version> --revision <version> --trademark <svn/git revision>");

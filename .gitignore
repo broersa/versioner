@@ -7,7 +7,6 @@ TestResults
 #nunit
 TestResult.xml
 
-#nuget
-packages
-
 *.suo
+
+.DS_Store
