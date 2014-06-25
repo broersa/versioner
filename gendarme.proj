@@ -4,6 +4,6 @@
     <Binaries Include="Versioner\bin\Debug\Versioner.exe"/>
   </ItemGroup>
   <Target Name="Build">
-    <Exec IgnoreExitCode="true" Command="gendarme --html gendarme.html --xml gendarme.xml @(Binaries,' ')" />
+    <Exec IgnoreExitCode="true" Command="gendarme --html html\gendarme.html --xml gendarme.xml @(Binaries,' ')" />
   </Target>
 </Project>
