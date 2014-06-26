@@ -2,8 +2,11 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Binaries Include="Versioner\bin\Debug\Versioner.exe"/>
+    <GendarmeHtml Include="gendarme.html"/>
   </ItemGroup>
   <Target Name="Build">
-    <Exec IgnoreExitCode="true" Command="gendarme --html html\gendarme.html --xml gendarme.xml @(Binaries,' ')" />
+    <Exec IgnoreExitCode="true" Command="gendarme --html gendarme.html --xml gendarme.xml @(Binaries,' ')" />
+    <MakeDir Directories="html" />
+    <Copy SourceFiles="@(GendarmeHtml)" DestinationFolder="html" />
   </Target>
 </Project>
