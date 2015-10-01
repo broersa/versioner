@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versioner", "Versioner\Versioner.csproj", "{ADCA8172-E592-41B4-84CD-53700F0195DF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2DCD4B15-3C27-47D4-9213-54B949FC0C2A}"
+	ProjectSection(SolutionItems) = preProject
+		getversion.proj = getversion.proj
+		makerelease.proj = makerelease.proj
+		stylegendarme.proj = stylegendarme.proj
+		versioner.proj = versioner.proj
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -14,8 +22,7 @@ Global
 		{ADCA8172-E592-41B4-84CD-53700F0195DF}.Release|x86.ActiveCfg = Release|x86
 		{ADCA8172-E592-41B4-84CD-53700F0195DF}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Versioner\Versioner.csproj
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
